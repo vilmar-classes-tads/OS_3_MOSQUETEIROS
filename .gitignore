@@ -23,4 +23,6 @@
 hs_err_pid*
 replay_pid*
 
-
+#ignorar pasta de build do maven
+target/
+/target/
