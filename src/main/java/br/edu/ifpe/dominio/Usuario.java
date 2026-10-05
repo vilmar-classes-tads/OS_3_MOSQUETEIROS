@@ -67,7 +67,7 @@ public class Usuario{
         this.senha = senha;
         this.telefone = telefone;
         this.campus = campus;
-        this.areaFormacao = areaFormacao;
+        this.areaFormacao = areaFormacao
         this.titulacao = titulacao;
         this.sexo = sexo;
         this.lattesUrl = lattesUrl;
