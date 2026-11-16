@@ -2,7 +2,6 @@ package br.edu.ifpe;
 import br.edu.ifpe.dominio.Edital;
 import br.edu.ifpe.service.EditalService;
 import java.time.LocalDate;
-
 public class Main 
 {
  public static void main(String[] args)
