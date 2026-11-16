@@ -1,0 +1,24 @@
+name: Docker CI
+on:
+ push:
+ branches: [ "develop", "feature/docker-actions" ]
+ pull_request:
+ branches: [ "develop" ]
+jobs:
+ build-docker:
+ runs-on: ubuntu-latest
+ steps:
+ - name: Checkout do codigo
+ uses: actions/checkout@v4
+ - name: Configurar Java 17
+ uses: actions/setup-java@v4
+ with:
+ java-version: '17'
+ distribution: 'temurin'
+ cache: maven
+ - name: Gerar o .jar com Maven
+ run: mvn clean package
+ - name: Build da imagem Docker
+ run: docker build -t sistema-editais:latest .
+ - name: Executar o container
+ run: timeout 30 docker run sistema-editais:latest < /dev/null || [ $? -eq 124 ]
